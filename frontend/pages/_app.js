@@ -3,8 +3,29 @@ import Head from "next/head"
 import Layout from "../components/Layout"
 import { getCategories } from "../utils/api"
 import "../styles/index.css"
+import React from "react"
 
 const MyApp = ({ Component, pageProps }) => {
+
+
+  React.useEffect(() => {
+
+    // document.addEventListener("DOMContentLoaded", function(){
+
+      document.addEventListener('snipcart.ready', function() {
+        Snipcart.api.session.setCurrency('brl');
+         Snipcart.api.session.setLanguage('pt-BR', {
+            "payment": {
+                "methods": {
+                    "deferred_payment": "Pay at delivery"
+                }
+            }
+        });
+      })
+    // });
+
+    return null;
+  })
   return (
     <Layout categories={pageProps.categories}>
       <Head>
@@ -18,6 +39,11 @@ const MyApp = ({ Component, pageProps }) => {
           async
           src="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js"
         />
+        <script >
+          
+  
+</script>
+       
       </Head>
       <Component {...pageProps} />
     </Layout>

@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
+import React from "react"
 
 import NextImage from "../../components/Image"
 import { getProducts, getProduct } from "../../utils/api"
@@ -10,6 +11,18 @@ const ProductPage = ({ product }) => {
   if (router.isFallback) {
     return <div>Loading product...</div>
   }
+
+  React.useEffect(() => {
+
+    // document.addEventListener("DOMContentLoaded", function(){
+
+      document.addEventListener('snipcart.ready', function() {
+        Snipcart.api.session.setCurrency('brl');
+         Snipcart.api.session.setLanguage('pt-BR')
+    });
+
+    return null;
+  })
 
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 mt-8">
@@ -22,7 +35,7 @@ const ProductPage = ({ product }) => {
       <div className="w-full p-5 flex flex-col justify-between">
         <div>
           <h4 className="mt-1 font-semibold text-lg leading-tight truncate text-gray-700">
-            {product.title} - ${product.price}
+            {product.title} - {product.price}
           </h4>
           <div className="mt-1 text-gray-600">{product.description}</div>
         </div>

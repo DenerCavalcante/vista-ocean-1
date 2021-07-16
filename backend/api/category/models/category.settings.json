@@ -2,12 +2,15 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "category"
+    "name": "categoria",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string"
@@ -20,6 +23,10 @@
       "via": "categories",
       "collection": "product",
       "dominant": true
+    },
+    "destaque": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -2,12 +2,15 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product"
+    "name": "produtos",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
@@ -29,15 +32,16 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
     "categories": {
-      "collection": "category",
-      "via": "products"
+      "via": "products",
+      "collection": "category"
     },
     "Custom_field": {
       "type": "component",
@@ -52,6 +56,10 @@
       ],
       "default": "published",
       "required": true
+    },
+    "cover": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

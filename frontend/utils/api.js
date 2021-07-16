@@ -23,7 +23,13 @@ export async function getCategory(slug) {
 }
 
 export async function getProducts() {
-  const products = await fetchAPI("/products");
+  const products = await fetchAPI("/products?cover_null");
+  return products;
+}
+
+
+export async function getCovers() {
+  const products = await fetchAPI("/products/covers");
   return products;
 }
 

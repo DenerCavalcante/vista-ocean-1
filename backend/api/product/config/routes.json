@@ -3,7 +3,15 @@
     {
       "method": "GET",
       "path": "/products",
-      "handler": "product.find",
+      "handler": "product.findWithNotCover",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/products/covers/",
+      "handler": "product.findWithCover",
       "config": {
         "policies": []
       }
