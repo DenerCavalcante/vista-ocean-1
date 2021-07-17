@@ -2,6 +2,7 @@ import CategoryButtons from "./CategoryButtons"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 
+
 const Layout = ({ children, categories }) => {
   return (
     <div className="w-full">
