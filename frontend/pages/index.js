@@ -8,8 +8,8 @@ const HomePage = ({ products }) => {
       <Head>
         <title>Vista Oceane :: 2021</title>
         <script>
-        {/* document.addEventListener('snipcart.ready', function() {
-        Snipcart.api.session.setLanguage('pt-BR', {
+        {/* document.addEventListener('stripe.ready', function() {
+        stripe.api.session.setLanguage('pt-BR', {
             "payment": {
                 "methods": {
                     "deferred_payment": "Pay at delivery"

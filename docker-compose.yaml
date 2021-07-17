@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  strapiexample:
+    image: strapi/strapi
+    tty: true
+    # networks:
+    #   - strapi-app-network
+    volumes:
+      - ./app:/src/app
+    ports:
+      - "8000:1337"
+
+# networks:
+#   strapi-app-network:
+#      driver: overlay
+
+volumes:
+  strapidata:

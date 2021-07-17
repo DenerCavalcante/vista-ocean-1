@@ -17,8 +17,8 @@ const ProductPage = ({ product }) => {
     // document.addEventListener("DOMContentLoaded", function(){
 
       document.addEventListener('snipcart.ready', function() {
-        Snipcart.api.session.setCurrency('brl');
-         Snipcart.api.session.setLanguage('pt-BR')
+        snipcart.api.session.setCurrency('brl');
+        snipcart.api.session.setLanguage('pt-BR')
     });
 
     return null;

@@ -1,0 +1,38 @@
+version: '3.7'
+services:
+  app:
+    working_dir: /src
+    
+    volumes: 
+      - ./:/src
+    ports:
+      - 8000:1337
+
+    # command: yarn develop  
+     
+    image: node:14  
+    # configs:
+    #     source: hosts
+    #     target: etc/hosts
+
+    deploy:
+      labels:
+        traefik.http.services.app.loadbalancer.server.port: '80'
+        traefik.http.routers.app.rule: (Host(`vista.dev.in`)
+        traefik.docker.network: proxy
+        traefik.enable: 'true'
+        traefik.http.routers.app.entrypoints: http
+        traefik.http.routers.app-secure.entrypoints: https
+        traefik.http.routers.app-secure.rule: (Host(`vista.dev.in`))
+        traefik.http.routers.app-secure.tls: 'true'
+        traefik.http.routers.app-secure.tls.certresolver: le
+        traefik.http.middlewares.app_redirect.redirectscheme.scheme: https
+        traefik.http.routers.app.middlewares: "app_redirect"
+    tty: true
+    networks:
+      - proxy
+      - vista_net
+networks:
+  proxy:
+    external: true
+  vista_net:

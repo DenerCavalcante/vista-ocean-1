@@ -4,7 +4,7 @@ import NextImage from "./Image"
 
 const Navbar = ({covers}) => {
   return (
-    <div className="h-20">
+    <React.Fragment>
       <header className="absolute top-0 left-0 w-full bg-white z-10  border-b px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64">
         <div className="flex w-full justify-between items-centertext-sm py-4">
           <div className="flex w-full items-center justify-between ">
@@ -69,14 +69,14 @@ const Navbar = ({covers}) => {
         </div>
       </header>
 
-      {!!covers && <div className="bg-gray-100">
+      <div className="bg-gray-100">
         <section
           className="cover bg-blue-teal-gradient relative bg-blue-600 px-4 sm:px-8 lg:px-16 xl:px-40 2xl:px-64 overflow-hidden py-32 flex: ;
       items-center"
         >
           <div className="h-full absolute top-0 left-0 z-0">
             <img
-              src="/img/cover-bg.jpeg"
+              src="/img/cover-gb.jpeg"
               alt=""
               className="w-full h-full object-cover opacity-20"
             />
@@ -100,9 +100,10 @@ const Navbar = ({covers}) => {
             </div>
           </div>
         </section>
-      </div>}
-    </div>
-
+      </div>
+    </React.Fragment>
+   )
+  }
     // <div className="flex justify-between ml-6 mr-6 mt-4">
     //   <Link href="/">
     //     <a>
@@ -115,12 +116,11 @@ const Navbar = ({covers}) => {
     //       />
     //     </a>
     //   </Link>
-    //   <button className="snipcart-checkout flex items-center">
+    //   <button className="stripe-checkout flex items-center">
     //     <NextImage height="150" width="150" src="/cart.svg" alt="Cart" />
-    //     <span className="snipcart-total-price ml-3 font-semibold text-sm text-indigo-500"></span>
+    //     <span className="stripe-total-price ml-3 font-semibold text-sm text-indigo-500"></span>
     //   </button>
     // </div>
-  )
-}
-
+   
+  
 export default Navbar
