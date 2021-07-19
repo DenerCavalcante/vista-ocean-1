@@ -6,7 +6,7 @@ const HomePage = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>Vista Oceane :: 2021</title>
+        <title>Vista Oceane - Barcos</title>
         <script>
         {/* document.addEventListener('stripe.ready', function() {
         stripe.api.session.setLanguage('pt-BR', {

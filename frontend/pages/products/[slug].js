@@ -46,7 +46,7 @@ const ProductPage = ({ product }) => {
             className="snipcart-add-item mt-4 bg-white border border-gray-200 d hover:shadow-lg text-gray-700 font-semibold py-2 px-4 rounded shadow"
             data-item-id={product.id}
             data-item-price={product.price}
-            data-item-url="http://test.mysite.com/products/1"
+            data-item-url="http://localhost:3000/products/lancha-sky-net"
             data-item-description={product.description}
             data-item-image={getStrapiMedia(
               product.image.formats.thumbnail.url

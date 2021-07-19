@@ -8,7 +8,7 @@ import React from "react"
 const MyApp = ({ Component, pageProps }) => {
 
 
-  React.useEffect(() => {
+   React.useEffect(() => {
 
     // document.addEventListener("DOMContentLoaded", function(){
 
@@ -25,7 +25,7 @@ const MyApp = ({ Component, pageProps }) => {
     // });
 
     return null;
-  })
+   })
   return (
     <Layout categories={pageProps.categories}>
       <Head>
@@ -61,6 +61,6 @@ MyApp.getInitialProps = async (ctx) => {
   const categories = await getCategories()
   // Pass the data to our page via props
   return { ...appProps, pageProps: { categories, path: ctx.pathname } }
-}
+ }
 
 export default MyApp
